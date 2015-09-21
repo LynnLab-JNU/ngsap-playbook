@@ -35,7 +35,7 @@ It follows the following steps.
 3. Edit inventory/hosts file 
 
 	- Add IP address of Galaxy instance, 
- 	- Alternatively you can add mutiple IP addresses for multiple Galaxy instance one per line
+ 	- Alternatively you can add mutiple IP addresses for multiple Galaxy instances one per line
 
 4. Start Installation
 
