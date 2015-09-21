@@ -15,12 +15,12 @@ Prerequisites:
 
 2. How to install ansible
 	
-http://docs.ansible.com/ansible/intro_installation.html#installation 
+	http://docs.ansible.com/ansible/intro_installation.html#installation 
 
 
 Quick Start:
 
-1. Clone the repository:  \
+1. Clone the repository:  
 	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
 
 2. cd ngsap-playbook
