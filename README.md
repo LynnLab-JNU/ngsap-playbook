@@ -18,12 +18,12 @@ It follows the following steps.
 	http://docs.ansible.com/ansible/intro_installation.html#installation 
 
 3. An easy way to install ansible
-	a. sudo easy_install pip
-	b. sudo pip install ansible 
+	1. sudo easy_install pip
+	2. sudo pip install ansible 
 
 
 
-*Quick Start:*
+**Quick Start:**
 
 1. Clone the repository:  
 
@@ -35,8 +35,8 @@ It follows the following steps.
 
 3. Edit inventory/hosts file 
 
-	Add IP Address of Galaxy Instance, 
-	[Alternatively you can add mutiple IP Addresses for Multiple Galaxy Instance one per line]
+	- Add IP Address of Galaxy Instance, 
+ 	- [Alternatively you can add mutiple IP Addresses for Multiple Galaxy Instance one per line]
 
 4. Start Installation
 
