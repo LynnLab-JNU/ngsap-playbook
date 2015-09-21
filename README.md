@@ -9,7 +9,7 @@ It follows the following steps.
 3. Install Galaxy NGSAP tools
 
 
-Prerequisites:
+**prerequisites:**
 
 1. Ansible must be installed prior to run this playbook.
 
@@ -22,19 +22,22 @@ Prerequisites:
 	b. sudo pip install ansible 
 
 
-Quick Start:
+
+*Quick Start:*
 
 1. Clone the repository:  
 
-	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
+	```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git```
 
 2. Go to ngsap-playboook directory:
 
-	cd ngsap-playbook
+	```cd ngsap-playbook```
 
 3. Edit inventory/hosts file 
 
 	Add IP Address of Galaxy Instance, 
 	[Alternatively you can add mutiple IP Addresses for Multiple Galaxy Instance one per line]
 
-4. make install
+4. Start Installation
+
+	```make install	```
