@@ -17,12 +17,24 @@ Prerequisites:
 	
 	http://docs.ansible.com/ansible/intro_installation.html#installation 
 
+3. An easy way to install ansible
+	a. sudo easy_install pip
+	b. sudo pip install ansible 
+
 
 Quick Start:
 
 1. Clone the repository:  
+
 	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
 
-2. cd ngsap-playbook
+2. Go to ngsap-playboook directory:
 
-3. make install
+	cd ngsap-playbook
+
+3. Edit inventory/hosts file 
+
+	Add IP Address of Galaxy Instance, 
+	[Alternatively you can add mutiple IP Addresses for Multiple Galaxy Instance one per line]
+
+4. make install
