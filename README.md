@@ -83,11 +83,11 @@ through the *Note section* provided below before running this step.
 
 *Note:-*
 
-        - Currenlty support centos 7/ ubuntu trusty OS based servers.
-        - It requires sudoer priviledges on the local server to install the Galaxy instance.
-	- It assumes that system user 'galaxy' does not exists and uid '1001' is available.
-	- It assumes that port '8080' is available.
-	- After installation the selinux and firewall must be customized separately if they are active.
+    - Currenlty support centos 7/ ubuntu trusty OS based servers.
+    - It requires sudoer priviledges on the local server to install the Galaxy instance.
+    - It assumes that system user 'galaxy' does not exists and uid '1001' is available.
+    - It assumes that port '8080' is available.
+    - After installation the selinux and firewall must be customized accordingly.
 
 
 
@@ -123,10 +123,10 @@ It is thus adviced to through the *Note section* provided below before running t
 
 *Note:-*
 	
-	- Currenlty support centos 7/ ubuntu trusty OS based servers.
-	- This step assumes that the ssh-key based login is configured on the remote servers.
-        - It requires sudoer priviledges on the remote server to install the Galaxy instance. 
-        - It creates a system user 'galaxy' with uid '1001' 
-	
-
+    - Currenlty support centos 7/ ubuntu trusty OS based servers.
+    - This step assumes that the ssh-key based login is configured on the remote servers.
+    - It requires sudoer priviledges on the remote server to install the Galaxy instance. 
+    - It assumes that system user 'galaxy' does not exists and uid '1001' is available on the remote servers.
+    - It assumes that port '8080' is available on the remote servers.
+    - After installation the selinux and firewall must be customized accordingly on the remote servers.
 
