@@ -112,7 +112,7 @@ It is thus adviced to through the *Note* section provided below before running t
 
 	`cd ngsap-playbook`
 
-3. Edit provisioning/inventory/remote-hosts file 
+3. Edit `provisioning/inventory/remote-hosts` file 
 
     - `Add an IP address of destined Galaxy instance host machine,`
 
