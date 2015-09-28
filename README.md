@@ -38,15 +38,18 @@ any confict with the other existing galaxy instance installation and configurati
 
 1. Clone the repository:  
 
-	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git 
+	```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
+```
 
 2. Go to ngsap-playboook directory:
 
-	cd ngsap-playbook
+	```cd ngsap-playbook
+```
 
 3. Start Installation
 
-	make install
+	```make install
+```
 
 
 
@@ -71,15 +74,18 @@ through the *Note* section provided below before running this step.
 
 1. Clone the repository: 
 
-	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
+	```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
+```
 
 2. Go to ngsap-playboook directory:
 
-	cd ngsap-playbook
+	```cd ngsap-playbook
+```
 
 3. Start Installation
 
-	make install_local
+	```make install_local
+```
 
 
 
@@ -105,21 +111,26 @@ It is thus adviced to through the *Note* section provided below before running t
 	
 1. Clone the repository: 
 
-	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git 
+	```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
+```
 
 2. Go to ngsap-playboook directory:
 
-	cd ngsap-playbook
+	```cd ngsap-playbook
+```
 
 3. Edit provisioning/inventory/remote-hosts file 
 
+	```
 	- Add an IP address of destined Galaxy instance host machine,
 	- Alternatively you can add mutiple IP addresses for multiple Galaxy instances one per line.
+```
 
 
 4. Start Installation
 
-	make install_remote
+	```make install_remote
+```
 
 
 
