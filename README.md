@@ -51,10 +51,11 @@ There are two options provided to install NGSAP Galaxy Instance.
 	make install_ngsap
 
 
+
 *Note:-*
 	
-	- This step assumes that the ssh-key based login is configured prior to adding more hosts.
-	- Currenlty support centos 7/ubuntu trusty OS based servers.
+- This step assumes that the ssh-key based login is configured prior to adding more hosts.
+- Currenlty support centos 7/ubuntu trusty OS based servers.
 
 
 
@@ -66,7 +67,7 @@ There are two options provided to install NGSAP Galaxy Instance.
 
 1. Clone the repository:  
 
-	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
+	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git 
 
 2. Go to ngsap-playboook directory:
 
@@ -77,9 +78,10 @@ There are two options provided to install NGSAP Galaxy Instance.
 	make install
 
 
+
 *Note:-*
 
-	- This step assumes the virtualization is supported and enabled in the chosen hardware.
-	- It requires suoder priviledges to install vagrant, virtualbox and other required packages.
-	- It updates the packages in the host machine.
+- This step assumes the virtualization is supported and enabled in the chosen hardware.
+- It requires suoder priviledges to install vagrant, virtualbox and other required packages.
+- It updates the packages in the host machine.
 
