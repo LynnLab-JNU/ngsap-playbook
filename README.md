@@ -26,7 +26,7 @@ It follows the following steps.
 
 There are two options provided to install NGSAP Galaxy Instance. 
 
-### 1. Install the NGSAP Galaxy instance to an existing server.
+### I. Install the NGSAP Galaxy instance to an existing server.
 
 
 *Installation Steps:-*
@@ -59,7 +59,7 @@ There are two options provided to install NGSAP Galaxy Instance.
 
 
 
-### 2. Install the NGSAP Galaxy instance in a virtualbox virutal machine using vagrant.
+### II. Install the NGSAP Galaxy instance in a virtualbox virutal machine using vagrant.
 
 
 *Installation Steps:-*
