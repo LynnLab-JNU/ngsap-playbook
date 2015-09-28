@@ -78,6 +78,7 @@ There are two options provided to install NGSAP Galaxy Instance.
 
 
 *Note:-*
+
 	- This step assumes the virtualization is supported and enabled in the chosen hardware.
 	- It requires suoder priviledges to install vagrant, virtualbox and other required packages.
 	- It updates the packages in the host machine.
