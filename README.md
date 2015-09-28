@@ -9,7 +9,7 @@ It follows the following steps.
 3. Install Galaxy NGSAP tools
 
 
-**prerequisites:**
+## prerequisites:
 
 1. Ansible must be installed prior to run this playbook.
 
@@ -22,16 +22,16 @@ It follows the following steps.
 	2. sudo pip install ansible 
 
 
-**Installation Options**
+## Installation Options:
 
-	There are two options provided to install NGSAP Galaxy Instance. 
+There are two options provided to install NGSAP Galaxy Instance. 
 
-**I. Install the NGSAP Galaxy instance to an existing server.**
+### I. Install the NGSAP Galaxy instance to an existing server.
 
 
 *Installation Steps:*
 	
-```	
+	
 1. Clone the repository: 
 
 	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git 
@@ -52,28 +52,28 @@ It follows the following steps.
 4. Start Installation
 
 	make install_ngsap
-```
 
-**II. Install the NGSAP Galaxy instance in a virtualbox virutal machine using vagrant.**
+
+### II. Install the NGSAP Galaxy instance in a virtualbox virutal machine using vagrant.
 
 
 *Installation Steps:*
 
-```
-	1. Clone the repository:  
 
-		git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
+1. Clone the repository:  
 
-	2. Go to ngsap-playboook directory:
+	git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
 
-		cd ngsap-playbook
+2. Go to ngsap-playboook directory:
 
-	3. Start Installation
+	cd ngsap-playbook
 
-		make install
+3. Start Installation
+
+	make install
 
 	*Note:*
 	- This step assumes the virtualization is supported and enabled in the chosen hardware.
 	- It requires suoder priviledges to install vagrant, virtualbox and other required packages.
 	- It updates the packages in the host machine.
-```
+
