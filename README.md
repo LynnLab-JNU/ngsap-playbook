@@ -54,8 +54,8 @@ There are two options provided to install NGSAP Galaxy Instance.
 
 *Note:-*
 	
-- This step assumes that the ssh-key based login is configured prior to adding more hosts.
-- Currenlty support centos 7/ubuntu trusty OS based servers.
+	- This step assumes that the ssh-key based login is configured prior to adding more hosts.
+	- Currenlty support centos 7/ubuntu trusty OS based servers.
 
 
 
@@ -81,7 +81,7 @@ There are two options provided to install NGSAP Galaxy Instance.
 
 *Note:-*
 
-- This step assumes the virtualization is supported and enabled in the chosen hardware.
-- It requires suoder priviledges to install vagrant, virtualbox and other required packages.
-- It updates the packages in the host machine.
+	- This step assumes the virtualization is supported and enabled in the chosen hardware.
+	- It requires suoder priviledges to install vagrant, virtualbox and other required packages.
+	- It updates the packages in the host machine.
 
