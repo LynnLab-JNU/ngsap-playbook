@@ -24,7 +24,7 @@ It follows the following steps.
 
 ## Installation Options:
 
-There are two options provided to install NGSAP Galaxy Instance.  
+The following options are provided to install NGSAP Galaxy Instance.  
 
 ### I. Install the NGSAP Galaxy instance in a virtualbox virutal machine using vagrant.
 
@@ -52,10 +52,12 @@ any confict with the other existing galaxy instance installation and configurati
 
 *Note:-*
 
-	- This step assumes the virtualization is supported and enabled on the chosen hardware.
-	- It requires suoder priviledges to install vagrant, virtualbox and other required packages.
-	- It updates the packages in the host machine.
-
+    - This step assumes the virtualization is supported and enabled on the chosen hardware.
+    - It requires suoder priviledges to install vagrant, virtualbox and other required packages.
+    - It updates the packages in the host machine.
+    - It assumes that port '8085' is available.
+    - After installation the selinux and firewall must be customized accordingly.
+     
 
 ### II. Install the NGSAP Galaxy instance to a local server.
 
