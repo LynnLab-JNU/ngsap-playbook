@@ -115,6 +115,7 @@ It is thus adviced to through the *Note* section provided below before running t
 3. Edit provisioning/inventory/remote-hosts file 
 
      	`Add an IP address of destined Galaxy instance host machine,`
+
     	`Alternatively you can add mutiple IP addresses for multiple Galaxy instances one per line.`
         
         
