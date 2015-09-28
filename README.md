@@ -24,12 +24,14 @@ It follows the following steps.
 
 **Installation Options**
 
-There are two options provided to install NGSAP Galaxy Instance. 
+	There are two options provided to install NGSAP Galaxy Instance. 
 
-1. Install the NGSAP Galaxy instance to an existing server.
-	
-	**Installation Steps:**
+**I. Install the NGSAP Galaxy instance to an existing server.**
+
+
 ```	
+*Installation Steps:*
+	
        	1. Clone the repository: 
 
 		git clone https://github.com/LynnLab-JNU/ngsap-playbook.git 
@@ -52,11 +54,12 @@ There are two options provided to install NGSAP Galaxy Instance.
                 make install_ngsap
 ```
 
-2. Install the NGSAP Galaxy instance in a virtualbox virutal machine using vagrant.  
+**II. Install the NGSAP Galaxy instance in a virtualbox virutal machine using vagrant.**
 
 
-	**Installation Steps:**
 ```
+*Installation Steps:*
+
 	1. Clone the repository:  
 
 		git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
