@@ -30,17 +30,15 @@ There are two options provided to install NGSAP Galaxy Instance.
 	
 	**Quick Start:**
 	
-	1. Clone the repository:
+	1) Clone the repository:
 		
-		```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
-```
+		```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git```
 
-	2. Go to ngsap-playboook directory:
+	2) Go to ngsap-playboook directory:
 
-                ```cd ngsap-playbook
-```
+                ```cd ngsap-playbook```
 
-	3. Edit provisioning/hosts file  [Optional]
+	3) Edit provisioning/hosts file  [Optional]
 
                 - Add an IP address of destined Galaxy instance host machine,
                 - Alternatively you can add mutiple IP addresses for multiple Galaxy instances one per line.
@@ -49,10 +47,9 @@ There are two options provided to install NGSAP Galaxy Instance.
                 - This step assumes that the ssh-key based login is configured prior to adding more hosts.
                 - Currenlty support centos 7/ubuntu trusty OS based servers.
 
-	4. Start Installation
+	4) Start Installation
 
-                ```make install_ngsap
-```
+                ```make install_ngsap```
 
 
 2. Install the NGSAP Galaxy instance in a virtualbox virutal machine using vagrant.  
@@ -60,17 +57,14 @@ There are two options provided to install NGSAP Galaxy Instance.
 
 	**Quick Start:**
 
-	1. Clone the repository:  
+	1) Clone the repository:  
 
-		```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git
-```
+		```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git```
 
-	2. Go to ngsap-playboook directory:
+	2) Go to ngsap-playboook directory:
 
-		```cd ngsap-playbook
-```
+		```cd ngsap-playbook```
 
-	3. Start Installation
+	3) Start Installation
 
-		```make install
-```
+		```make install```
