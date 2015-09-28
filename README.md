@@ -30,15 +30,15 @@ There are two options provided to install NGSAP Galaxy Instance.
 	
 	**Installation Steps:**
 ```	
-	1. Clone the repository: 
+       	1. Clone the repository: 
 
 		git clone https://github.com/LynnLab-JNU/ngsap-playbook.git 
 
-	2. Go to ngsap-playboook directory:
+   	2. Go to ngsap-playboook directory:
 
                 cd ngsap-playbook
 
-	3. Edit provisioning/hosts file  [Optional]
+	3. Edit provisioning/hosts file 
 
                 - Add an IP address of destined Galaxy instance host machine,
                 - Alternatively you can add mutiple IP addresses for multiple Galaxy instances one per line.
@@ -68,4 +68,9 @@ There are two options provided to install NGSAP Galaxy Instance.
 	3. Start Installation
 
 		make install
+
+	*Note:*
+	- This step assumes the virtualization is supported and enabled in the chosen hardware.
+	- It requires suoder priviledges to install vagrant, virtualbox and other required packages.
+	- It updates the packages in the host machine.
 ```
