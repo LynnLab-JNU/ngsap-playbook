@@ -63,7 +63,7 @@ any confict with the other existing galaxy instance installation and configurati
 
 This option installs the Galaxy instance and NGSAP tools to a local server. Although the step is fully automated, 
 it may confict with any other existing galaxy instance installation and configurations. It is thus adviced to go 
-through the *Note section* provided below before running this step.
+through the *Note* section provided below before running this step.
  
 
 *Installation Steps:-*
@@ -97,7 +97,7 @@ through the *Note section* provided below before running this step.
 
 This option installs the Galaxy instance and NGSAP tools to one or more remote servers. This step is also automated,
 but it may confict with any other existing galaxy instance installation and configurations on those remote servers.
-It is thus adviced to through the *Note section* provided below before running this step.
+It is thus adviced to through the *Note* section provided below before running this step.
 
 
 *Installation Steps:-*
