@@ -52,7 +52,7 @@ any confict with the other existing galaxy instance installation and configurati
 
 *Note:-*
 
-	- This step assumes the virtualization is supported and enabled in the chosen hardware.
+	- This step assumes the virtualization is supported and enabled on the chosen hardware.
 	- It requires suoder priviledges to install vagrant, virtualbox and other required packages.
 	- It updates the packages in the host machine.
 
