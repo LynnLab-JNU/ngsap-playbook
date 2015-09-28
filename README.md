@@ -18,6 +18,7 @@ It follows the following steps.
 	http://docs.ansible.com/ansible/intro_installation.html#installation 
 
 3. An easy way to install ansible
+
 	1. sudo easy_install pip
 	2. sudo pip install ansible 
 
@@ -114,9 +115,9 @@ It is thus adviced to through the *Note* section provided below before running t
 3. Edit provisioning/inventory/remote-hosts file 
 
 	`- Add an IP address of destined Galaxy instance host machine,`
+
 	`- Alternatively you can add mutiple IP addresses for multiple Galaxy instances one per line.`
         
-
 4. Start Installation
 
 	`make install_remote`
