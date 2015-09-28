@@ -22,21 +22,50 @@ It follows the following steps.
 	2. sudo pip install ansible 
 
 
-**Quick Start:**
+**Installation Options**
 
-1. Clone the repository:  
+There are two options provided to install NGSAP Galaxy Instance. 
 
-	```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git```
+1. Install the NGSAP Galaxy instance to an existing server.
+	
+	**Quick Start:**
+	
+        1. Clone the repository:
 
-2. Go to ngsap-playboook directory:
+                ```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git```
 
-	```cd ngsap-playbook```
+        2. Go to ngsap-playboook directory:
 
-3. Edit inventory/hosts file 
+                ```cd ngsap-playbook```
 
-	- Add IP address of Galaxy instance, 
- 	- Alternatively you can add mutiple IP addresses for multiple Galaxy instances one per line
+        3. Edit provisioning/hosts file  [Optional]
 
-4. Start Installation
+                - Add an IP address of destined Galaxy instance host machine,
+                - Alternatively you can add mutiple IP addresses for multiple Galaxy instances one per line.
 
-	```make install	```
+                *Note:*
+                - This step assumes that the ssh-key based login is configured prior to adding more hosts.
+                - Currenlty support centos 7/ubuntu trusty OS based servers.
+
+        3. Start Installation
+
+                ```make install_ngsap```
+
+
+
+2. Install the NGSAP Galaxy instance in a virtualbox virutal machine using vagrant.  
+
+
+	**Quick Start:**
+
+	1. Clone the repository:  
+
+		```git clone https://github.com/LynnLab-JNU/ngsap-playbook.git```
+
+	2. Go to ngsap-playboook directory:
+
+		```cd ngsap-playbook```
+
+	3. Start Installation
+
+		```make install```
