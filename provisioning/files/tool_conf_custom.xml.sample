@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toolbox>
+  <label id="basic_tools" text="Basic Tools" version="" />
+  <section id="getext" name="Get Data">
+    <tool file="data_source/upload.xml" />
+  </section>
+  <label id="iasst_workshop" text="IASST Workshop" version="" />
+  <section id="trinity_tools" name="Trinity Tools" version="">
+  </section>	
+  <section id="tophat_tools" name="Tophat Tools" version="">
+  </section>
+  <section id="blast_tools" name="Blast Tools" version="">
+  </section>
+  <section id="miscellaneous" name="Miscellaneous" version="">
+  </section>
+  <section id="variant_analysis" name="Variant Analysis" version="">		
+  </section>
+  <section id="blastparser" name="Blast Parser" version="">
+  </section>
+</toolbox>
+

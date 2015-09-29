@@ -1,0 +1,48 @@
+api_key: <Galaxy Admin user API key>
+galaxy_instance: <IP address for target Galaxy instance>
+tools:
+- name: 'trinityrnaseq'
+  owner: 'anmoljh'
+  tool_panel_section_id: 'trinity_tools'
+  revisions:
+  - '767d6b0b41ad'
+- name: 'ncbi_blast_plus' 
+  owner: 'devteam'
+  tool_panel_section_id: 'blast_tools'
+  revisions:
+  - '577d9c12411a'
+- name: 'tophat2'
+  owner: 'devteam'
+  tool_panel_section_id: 'tophat_tools'
+  revisions:
+  - '6202ec8aab61'
+- name: 'trimmomatic'
+  owner: 'pjbriggs'
+  tool_panel_section_id: 'miscellaneous'
+  revisions:
+  - 'a60283899c6d'
+- name: 'fastqc'
+  owner: 'devteam'
+  tool_panel_section_id: 'miscellaneous'
+  revisions:
+  - '2d094334f61e'
+# Data Managers
+- name: data_manager_sam_fasta_index_builder
+  owner: devteam
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+- name: data_manager_fetch_genome_dbkeys_all_fasta
+  owner: devteam
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+- name: data_manager_fetch_genome_all_fasta
+  owner: devteam
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+- name: data_manager_bowtie2_index_builder
+  owner:  devteam
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+- name: data_manager_bwa_mem_index_builder
+  owner: devteam
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+- name: data_manager_picard_index_builder
+  owner: devteam
+  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
+

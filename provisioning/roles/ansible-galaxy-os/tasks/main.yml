@@ -1,0 +1,11 @@
+---
+# Install the base operating system requirements for running Galaxy
+
+- include: centos_packages.yml
+  when: ((ansible_os_family == "RedHat") or (ansible_distribution == "CentOS")) and install_packages
+
+- include: ubuntu_packages.yml
+  when: ((ansible_os_family == "Debian") or (ansible_distribution == 'Ubuntu')) and install_packages
+
+- include: system_users.yml
+  when: add_system_users

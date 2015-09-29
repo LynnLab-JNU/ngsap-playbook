@@ -1,0 +1,43 @@
+---
+- hosts: galaxy-servers
+
+  vars:
+
+      # vars for ansible-galaxy	
+      galaxy_user_name: galaxy
+      galaxy_vcs: git
+      galaxy_changeset_id: master
+      galaxy_server_dir: "/home/{{ galaxy_user_name }}/galaxy-dist"
+      galaxy_config_dir: "{{ galaxy_server_dir }}/config"
+      galaxy_mutable_config_dir: "{{ galaxy_server_dir }}/config"
+      galaxy_config:
+           "server:main": 
+               host: 0.0.0.0
+           "app:main": 
+               admin_users: admin_user@email.id
+               tool_dependency_dir: "/home/{{ galaxy_user_name }}/toolshed_dependencies"	
+               library_import_dir: "/home/{{ galaxy_user_name }}/library_import"
+               user_library_import_dir: "/home/{{ galaxy_user_name }}/library_import/users"
+               tool_config_file: "{{ galaxy_server_dir }}/config/tool_conf_custom.xml,{{ galaxy_shed_tool_conf_file }}"
+               tool_sheds_config_file: "{{ galaxy_server_dir }}/config/tool_sheds_conf.xml"
+               allow_library_path_paste: True	
+      galaxy_config_files:
+            - src: "files/tool_conf_custom.xml.sample"
+              dest: "{{ galaxy_config_dir }}/tool_conf_custom.xml"
+            - src: "files/tool_sheds_conf.xml.sample"
+              dest: "{{ galaxy_server_dir }}/config/tool_sheds_conf.xml"
+
+      # vars for ansible-galaxy-tools
+      galaxy_tools_admin_user: admin_user@email.id
+      galaxy_tools_admin_user_password: default_admin_password
+
+      galaxy_tools_create_bootstrap_user: yes
+      galaxy_tools_delete_bootstrap_user: no	
+ 
+      galaxy_tools_tool_list_file: "files/tool_list_ngsap.yaml"
+
+  roles:
+      - { role: ansible-galaxy-os, sudo: yes }	
+      - { role: ansible-galaxy, sudo: yes, sudo_user: "{{ galaxy_user_name  }}" }
+      - { role: ansible-galaxy-tools, sudo: yes, sudo_user: "{{ galaxy_user_name  }}" }
+

@@ -1,0 +1,110 @@
+---
+- hosts: all
+  sudo: yes
+
+  vars:
+
+        # virtualbox package vars
+        virtualbox_version: "5.0"
+ 
+        # vagrant package vars
+        vagrant_package_name: "vagrant_1.7.4_x86_64"
+        vagrant_deb_package_url: "https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb"
+        vagrant_rpm_package_url: "https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.rpm"
+
+  tasks:
+
+        # Update OS
+
+        - name: update OS [Debian family]
+          apt: update_cache=yes
+          when: ((ansible_os_family == "Debian")  or (ansible_distribution == 'Ubuntu'))
+          ignore_errors: true
+
+        - name: update OS [Redhat family]
+          yum: name=* update_cache=yes
+          when: (ansible_os_family == "RedHat" or ansible_distribution == "CentOS") and (ansible_distribution_major_version == "6" or ansible_distribution_major_version == "7")
+          ignore_errors: true
+
+        # Downloading vagrant package
+
+        - name: download vagrant deb package
+          get_url: url={{ vagrant_deb_package_url }} dest="/tmp/{{ vagrant_package_name }}.deb"
+          when: ((ansible_os_family == "Debian")  or (ansible_distribution == 'Ubuntu'))
+
+        - name: download vagrant rpm package
+          get_url: url={{ vagrant_rpm_package_url }} dest="/tmp/{{ vagrant_package_name }}.rpm"
+          when: (ansible_os_family == "RedHat" or ansible_distribution == "CentOS") and (ansible_distribution_major_version == "6" or ansible_distribution_major_version == "7")
+
+        # Installing Vagrant
+
+        - name: install vagrant deb package
+          apt: deb=/tmp/{{ vagrant_package_name }}.deb state=present
+          when: ((ansible_os_family == "Debian")  or (ansible_distribution == 'Ubuntu'))
+
+        - name: install vagrant rpm package
+          yum: name=/tmp/{{ vagrant_package_name }}.rpm state=present
+          when: (ansible_os_family == "RedHat" or ansible_distribution == "CentOS") and (ansible_distribution_major_version == "6" or ansible_distribution_major_version == "7")
+
+        # Installing Virutal Box
+
+        - name: Configure the Oracle APT key
+          apt_key: url=https://www.virtualbox.org/download/oracle_vbox.asc state=present
+          when: (ansible_os_family == "Debian"  or ansible_distribution == 'Ubuntu')
+          ignore_errors: true
+
+        - name: Configure the VirtualBox APT repositories
+          apt_repository: repo="deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib" state=present
+          when: (ansible_os_family == "Debian"  or ansible_distribution == 'Ubuntu')
+
+        - name: Install VirtualBox
+          apt: pkg=virtualbox-{{ virtualbox_version }} state=present
+          when: (ansible_os_family == "Debian"  or ansible_distribution == 'Ubuntu')
+
+        - name: Configure the Oracle YUM key
+          rpm_key: key=https://www.virtualbox.org/download/oracle_vbox.asc state=present 
+          when: (ansible_os_family == "RedHat" or ansible_distribution == "CentOS") and (ansible_distribution_major_version == "6" or ansible_distribution_major_version == "7")
+
+        - name: Configure the VirtualBox YUM repositories
+          get_url: url="http://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo"  dest="/etc/yum.repos.d/virtualbox.repo"
+          when: (ansible_os_family == "RedHat" or ansible_distribution == "CentOS") and (ansible_distribution_major_version == "6" or ansible_distribution_major_version == "7")
+
+        - name: Install VirtualBox
+          yum: name=VirtualBox-{{ virtualbox_version }} state=present
+          when: (ansible_os_family == "RedHat" or ansible_distribution == "CentOS") and (ansible_distribution_major_version == "6" or ansible_distribution_major_version == "7")
+
+
+        # Installing easy_install
+
+        - name: install easy_install and build-essential
+          apt: name={{ item }} state=latest
+          with_items:
+             - build-essential
+             - python-dev
+             - python-setuptools
+          when: (ansible_os_family == "Debian"  or ansible_distribution == 'Ubuntu')
+        
+        - name: install the "Development Tools" pacakge group
+          yum: name="@Development tools" state=present
+          when: (ansible_os_family == "RedHat" or ansible_distribution == "CentOS") and (ansible_distribution_major_version == "6" or ansible_distribution_major_version == "7")
+
+        - name: install easy_install
+          yum: name={{ item }} state=latest
+          with_items:
+             - python-devel
+             - python-setuptools
+          when: (ansible_os_family == "RedHat" or ansible_distribution == "CentOS") and (ansible_distribution_major_version == "6" or ansible_distribution_major_version == "7")
+
+        # Installing pip
+
+        - name: install pip
+          easy_install: name=pip
+
+        # Updating pip and Ansible
+ 
+        - name: update pip
+          pip: name=pip state=latest
+
+        - name: update ansible
+          pip: name=ansible state=latest
+  

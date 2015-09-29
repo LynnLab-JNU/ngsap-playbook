@@ -1,0 +1,52 @@
+---
+
+- name: Create/invoke script virtualenv
+  pip: name={{ item }} virtualenv={{ galaxy_tools_base_dir }}/venv virtualenv_command="{{ pip_virtualenv_command | default( 'virtualenv' ) }}" #"
+  with_items:
+    - pyyaml
+    - bioblend
+  when: (((ansible_os_family == "RedHat") or (ansible_distribution == "CentOS")) and (ansible_distribution_major_version == "7")) or ((ansible_os_family == "Debian") or (ansible_distribution == 'Ubuntu'))        
+- set_fact: pip_virtualenv_command="/opt/rh/python27/root/usr/bin/virtualenv-2.7"  
+  when: ((ansible_os_family == "RedHat") or (ansible_distribution == "CentOS")) and (ansible_distribution_major_version == "6")
+
+- name: Create/invoke script virtualenv
+  pip: name={{ item }} virtualenv={{ galaxy_tools_base_dir }}/venv virtualenv_command="{{ pip_virtualenv_command | default( 'virtualenv' ) }}" #"
+  with_items:
+    - pyyaml
+    - bioblend
+  environment:
+      PATH: /opt/rh/python27/root/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/centos/bin
+      LD_LIBRARY_PATH: /opt/rh/python27/root/usr/lib64
+  when: ((ansible_os_family == "RedHat") or (ansible_distribution == "CentOS")) and (ansible_distribution_major_version == "6")
+
+- set_fact: pip_virtualenv_command=""
+  when: ((ansible_os_family == "RedHat") or (ansible_distribution == "CentOS")) and (ansible_distribution_major_version == "6")
+
+- name: Place the tool management script
+  copy: src=install_tool_shed_tools.py dest={{ galaxy_tools_base_dir }}/install_tool_shed_tools.py
+
+- name: Copy tool list files
+  copy: src={{ item }} dest={{ galaxy_tools_base_dir }}/{{ item|basename }}
+  with_items: galaxy_tools_tool_list_files
+
+- name: Install Tool Shed tools
+  command: chdir={{ galaxy_tools_base_dir }} {{ galaxy_tools_base_dir }}/venv/bin/python install_tool_shed_tools.py -t {{ item|basename }} -a {{ galaxy_tools_api_key }} -g {{ galaxy_tools_galaxy_instance_url }}
+  with_items: galaxy_tools_tool_list_files
+  environment:
+      PATH: /opt/rh/python27/root/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/centos/bin
+      LD_LIBRARY_PATH: /opt/rh/python27/root/usr/lib64
+  when: ((ansible_os_family == "RedHat") or (ansible_distribution == "CentOS")) and (ansible_distribution_major_version == "6")
+  ignore_errors: true
+
+- name: Install Tool Shed tools
+  command: chdir={{ galaxy_tools_base_dir }} {{ galaxy_tools_base_dir }}/venv/bin/python install_tool_shed_tools.py -t {{ item|basename }} -a {{ galaxy_tools_api_key }} -g {{ galaxy_tools_galaxy_instance_url }}
+  with_items: galaxy_tools_tool_list_files
+  when: (((ansible_os_family == "RedHat") or (ansible_distribution == "CentOS")) and (ansible_distribution_major_version == "7")) or ((ansible_os_family == "Debian") or (ansible_distribution == 'Ubuntu'))
+  ignore_errors: true
+
+- name: Remove tool list files
+  file: dest={{ galaxy_tools_base_dir }}/{{ item|basename }} state=absent
+  with_items: galaxy_tools_tool_list_files
+
+- name: Remove tool management script
+  file: dest={{ galaxy_tools_base_dir }}/install_tool_shed_tools.py state=absent

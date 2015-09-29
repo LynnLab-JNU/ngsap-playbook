@@ -1,0 +1,98 @@
+---
+# Install system packages
+#- name: Add custom Galaxy PPA (used for nginx package)
+#  apt_repository: repo="ppa:galaxyproject/nginx" update_cache=no
+
+#- name: Add Docker repository key
+#  apt_key: url="https://apt.dockerproject.org/gpg" id="2C52609D"
+#  when: configure_docker
+
+#- name: Add Docker repository
+#  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-{{ ansible_distribution_release }} main' update_cache=no #'
+#  when: configure_docker
+
+- name: Update YUM cache
+  yum: name=* update_cache=yes
+
+- name: Add EPEL repo
+  yum: name=epel-release state={{ yum_package_state }}
+
+- name: upgrade/update all packages
+  yum: name=* state=latest
+  ignore_errors: yes
+
+- name: install the 'Development tools' package group
+  yum: name="@Development tools" state=present
+
+- name: Install required system packages
+  yum: name={{ item }} state={{ yum_package_state }}
+  with_items:
+    - ant
+    - atop
+#   - bioperl
+    - cmake
+    - curl
+    - gcc-c++
+    - gcc
+    - gcc-gfortran
+    - git
+    - htop
+    - iftop
+    - iotop
+#   - ipython
+    - libffi-devel
+    - lapack-devel
+    - ncurses-devel
+    - openblas-devel
+    - pam-devel
+#   - libpq-dev
+    - sparsehash-devel
+    - make
+    - mercurial
+#   - nginx-extras
+    - nmon
+    - openssh-server
+    - patch
+    - postgresql-server
+    - postgresql
+    - postgresql-plpython
+    - python-boto
+    - python-devel
+    - python-prettytable
+    - python-psycopg2
+    - python-virtualenv
+    - python-pip
+    - postgresql-devel
+    - rsync
+#   - slurm-drmaa-dev
+    - supervisor
+    - swig
+    - sysstat
+    - unzip
+    - vim
+    - wget
+    - zlib-devel
+  when: ((ansible_distribution_major_version == "6") or (ansible_distribution_major_version == "7"))
+
+- name: Install required system packages
+  yum: name={{ item }} state={{ yum_package_state }}
+  with_items: 
+    - axel	# axel package is available in centos 7; but need rpmforge repository in centos 6; 
+  when: (ansible_distribution_major_version == "7")
+
+- name: Add centos-release-SCL repo 
+  yum: name=centos-release-SCL state=present
+  when: (ansible_distribution_major_version == "6")
+
+- name: Install required system packages
+  yum: name={{ item }} state={{ yum_package_state }}
+  with_items:
+    - python27
+  when: (ansible_distribution_major_version == "6")
+
+
+#- name: Install Docker package
+#  apt: pkg={{ item }} state={{ apt_package_state }}
+#  with_items:
+#    - "{{ docker_package }}"
+#  when: configure_docker and install_packages
