@@ -5,6 +5,11 @@ prerequisites:
 
 install: install_vagrant_vm
 
+reinstall: clean install
+
+reload: 
+	vagrant reload --provision
+
 install_vagrant_vm: prerequisites
 	vagrant up	
 
