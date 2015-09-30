@@ -49,6 +49,7 @@ any confict with the other existing galaxy instance installation and configurati
 
 	`make install`
 
+4. Access the installed galaxy server at url `http://localhost:8085`
 
 
 *Note:-*
@@ -82,6 +83,7 @@ through the *Note* section provided below before running this step.
 
 	`make install_local`
 
+4. Access the installed galaxy server at url `http://localhost:8080` 
 
 
 *Note:-*
@@ -91,7 +93,6 @@ through the *Note* section provided below before running this step.
     - It assumes that system user 'galaxy' does not exists and uid '1001' is available.
     - It assumes that port '8080' is available.
     - After installation the selinux and firewall must be customized accordingly.
-
 
 
 ### III. Install the NGSAP Galaxy instance to one or more remote servers.
@@ -118,11 +119,11 @@ It is thus adviced to through the *Note* section provided below before running t
 
     - `Alternatively you can add mutiple IP addresses for multiple Galaxy instances one per line.`
         
-        
 4. Start Installation
 
 	`make install_remote`
 
+5. Access the installed Galaxy instance at url `http://REMOTE_SERVER_IP:8080`
 
 
 *Note:-*
