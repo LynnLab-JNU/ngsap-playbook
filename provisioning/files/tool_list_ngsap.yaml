@@ -5,7 +5,7 @@ tools:
   owner: 'anmoljh'
   tool_panel_section_id: 'trinity_tools'
   revisions:
-  - '767d6b0b41ad'
+  - '0a576a57a9eb'
 - name: 'ncbi_blast_plus' 
   owner: 'devteam'
   tool_panel_section_id: 'blast_tools'
@@ -20,7 +20,7 @@ tools:
   owner: 'pjbriggs'
   tool_panel_section_id: 'miscellaneous'
   revisions:
-  - 'a60283899c6d'
+  - 'f8a9a5eaca8a'
 - name: 'fastqc'
   owner: 'devteam'
   tool_panel_section_id: 'miscellaneous'
