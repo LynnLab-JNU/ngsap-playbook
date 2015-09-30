@@ -1,3 +1,4 @@
 [galaxy-servers]
-128.136.179.237 ansible_ssh_user=centos     		# remote machine ip-address and ssh-username 
-#128.136.179.111 ansible_ssh_user=ubuntu	    	# remote machine ip-address and ssh-username	
+# Example list of remote servers #
+#128.136.179.237 ansible_ssh_user=centos     		# centos based remote-machine ip-address and ssh-username 
+#128.136.179.111 ansible_ssh_user=ubuntu	    	# ubuntu based remote-machine ip-address and ssh-username	
