@@ -135,3 +135,8 @@ It is thus adviced to through the *Note* section provided below before running t
     - It assumes that port '8080' is available on the remote servers.
     - After installation the selinux and firewall must be customized accordingly on the remote servers.
 
+
+## Frequently asked Questions
+
+This FAQ is under preparation. The moto is to provide answers to FAQ in a more accessible way. 	
+
