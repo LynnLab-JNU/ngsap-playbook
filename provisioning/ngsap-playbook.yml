@@ -1,5 +1,5 @@
 ---
-- hosts: galaxy-servers
+- hosts: all
 
   vars:
 
